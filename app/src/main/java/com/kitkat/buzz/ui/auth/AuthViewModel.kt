@@ -2,6 +2,7 @@ package com.kitkat.buzz.ui.auth
 
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -16,6 +17,7 @@ class AuthViewModel(
     var email: String? = null
     var password: String? = null
     var confirm_password: String? = null
+    var EMAIL_PATTERN = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z.]+"
 
     var authListener: AuthListener? = null
 
@@ -31,6 +33,11 @@ class AuthViewModel(
         //validating email and password
         if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
             authListener?.onFailure("Invalid email or password")
+            return
+        }
+        else if (!email.toString().trim { it <= ' ' }.matches(EMAIL_PATTERN.toRegex())) {
+
+            authListener?.onFailure("Enter your correct email")
             return
         }
 
@@ -53,6 +60,11 @@ class AuthViewModel(
     fun signup() {
         if (email.isNullOrEmpty()) {
             authListener?.onFailure("Please enter email")
+            return
+        }
+        else if (!email.toString().trim { it <= ' ' }.matches(EMAIL_PATTERN.toRegex())) {
+
+            authListener?.onFailure("Enter your correct email")
             return
         }
         else if (password.isNullOrEmpty()) {

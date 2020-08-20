@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_signup.*
 import com.kitkat.buzz.R
 import com.kitkat.buzz.databinding.ActivitySignupBinding
@@ -26,7 +26,7 @@ class SignupActivity : AppCompatActivity(), AuthListener, KodeinAware {
         setContentView(R.layout.activity_signup)
 
         val binding: ActivitySignupBinding = DataBindingUtil.setContentView(this, R.layout.activity_signup)
-        viewModel = ViewModelProviders.of(this, factory).get(AuthViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
         binding.viewmodel = viewModel
 
         viewModel.authListener = this

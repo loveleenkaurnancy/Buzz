@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "819647349771",
+    "firebase_url": "https://buzzer-aaa60.firebaseio.com",
+    "project_id": "buzzer-aaa60",
+    "storage_bucket": "buzzer-aaa60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819647349771:android:006c03396a35016108f30e",
+        "android_client_info": {
+          "package_name": "com.kitkat.buzz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819647349771-p8e7524gf1qfl5us38m880u7nq7ut3j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeNpb-rr888M8TVvTZIe6nrLCG07D3SQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819647349771-p8e7524gf1qfl5us38m880u7nq7ut3j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
